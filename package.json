@@ -7,6 +7,7 @@
     "type": "git",
     "url": "https://github.com/DavideViolante/Angular2-Express-Mongoose.git"
   },
+  
   "scripts": {
     "postinstall": "typings install",
     "prestart": "webpack",
