@@ -1,0 +1,29 @@
+<div class="container">
+
+  <nav class="navbar navbar-dark bg-primary">
+    <div class="nav navbar-nav">
+      <a [routerLink]="['/csscarousel']" class="nav-item nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+        <i class="fa fa-home"></i>Welcome
+      </a>
+      <a [routerLink]="['/']" class="nav-item nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+        <i class="fa fa-home"></i> Home
+      </a>
+      <a style="float: right" [routerLink]="['/signup']" class="nav-item nav-link" routerLinkActive="active" *ngIf="!isloggedIn()">
+        <i class="fa fa-registered"></i> Signup
+      </a>
+      <a style="float: right" [routerLink]="['/login']" class="nav-item nav-link" routerLinkActive="active" *ngIf="!isloggedIn()">
+        <i class="fa fa-user"></i> Login
+      </a>
+      <a [routerLink]="['/about']" class="nav-item nav-link" routerLinkActive="active">
+        <i class="fa fa-info-circle"></i> About
+      </a>
+      <a style="float: right; cursor: pointer" class="nav-item nav-link pull-right"
+        routerLinkActive="active" (click)="onLogout()" *ngIf="isloggedIn()">
+        <i class="fa fa-sign-out"></i>Logout
+      </a>
+    </div>
+  </nav>
+
+  <router-outlet></router-outlet>
+
+</div>

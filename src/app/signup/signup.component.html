@@ -1,0 +1,33 @@
+<div class="card" *ngIf="!isEditing">
+  <h4 class="card-header">Add new user</h4>
+  <div class="card-block">
+  <form #f="ngForm" (ngSubmit)="addUser(f.value)">
+            <div class="form-group">
+                <label class="control-label">FirstName: </label>
+                <input class="form-control" name="firstName" ngModel>
+            </div>
+            <div class="form-group">
+                <label>LastName: </label>
+                <input class="form-control" name="lastName" ngModel>
+            </div>
+            <div class="form-group">
+                <label>UserName: </label>
+                <input class="form-control" name="userName" ngModel>
+            </div>
+            <div class="form-group">
+                <label>Password: </label>
+                <input class="form-control" name="password" ngModel>
+            </div>
+            <div class="form-group">
+                <label>City: </label>
+                <input class="form-control" name="city" ngModel>
+            </div>
+            <div class="form-group">
+                <label>Zipcode: </label>
+                <input class="form-control" name="zipCode" ngModel>
+            </div>
+            <div><button type="submit" class="btn btn-primary">Submit</button>
+            <button type="reset" class="btn btn-danger">Reset</button></div>
+          </form>
+  </div>
+</div>
