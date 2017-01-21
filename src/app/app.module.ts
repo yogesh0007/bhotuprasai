@@ -9,15 +9,19 @@ import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { SignUpComponent }      from './signup/signup.component';
 import { LoginComponent } from './login/login.component';
+import { NotesComponent } from './notes/notes.component';
 import { CSSCarouselImageComponent } from './landingPage/csscarouselimage.component';
+import { DonationsComponent } from './donations/donations.component';
 import { DataService } from './services/data.service';
 
 const routing = RouterModule.forRoot([
-    { path: '',      component: HomeComponent },
+    { path: '',      component: CSSCarouselImageComponent },
+    { path: 'users',      component: HomeComponent },
     { path: 'about', component: AboutComponent },
     { path: 'signup', component: SignUpComponent },
     { path: 'login', component: LoginComponent },
-    { path: 'csscarousel', component: CSSCarouselImageComponent}
+    { path: 'notes', component: NotesComponent },
+    { path: 'donations', component: DonationsComponent }
 ]);
 
 @NgModule({
@@ -26,8 +30,10 @@ const routing = RouterModule.forRoot([
     HomeComponent,
     AboutComponent,
     SignUpComponent,
+    NotesComponent,
     CSSCarouselImageComponent,
-    LoginComponent
+    LoginComponent,
+    DonationsComponent
   ],
   imports: [
     BrowserModule,

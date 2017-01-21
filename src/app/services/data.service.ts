@@ -33,4 +33,10 @@ export class DataService {
     return this.http.post("/signin", JSON.stringify(credentials), this.options);
   }
 
+  onNotesSave(user){
+    console.log("user is: ")
+    console.log(JSON.stringify(user));
+    return this.http.post("/saveNotes", JSON.stringify(user), this.options);
+  }
+
 }

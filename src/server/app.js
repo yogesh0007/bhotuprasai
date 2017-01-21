@@ -68,8 +68,15 @@ db.once('open', function() {
     })
   });
 
+  app.post('/saveNotes/:id', function(req, res) {
+    User.findOneAndUpdate({_id: req.params.id}, req.body, function(err) {
+      if(err) return console.error(err);
+      res.sendStatus(200);
+    })
+  });
+
   // delete by id
-  app.delete('/user/:id', function(req, res) {
+  app.delete('/user', function(req, res) {
     User.findOneAndRemove({_id: req.params.id}, function(err) {
       if(err) return console.error(err);
       res.sendStatus(200);
@@ -81,14 +88,17 @@ db.once('open', function() {
           if(err) {
             return console.error(err);
           }
+          console.log(obj);
           if(!obj) {
             return res.status(200).json({title : 'User not found'});
           }
           if(obj){
-            return res.status(200).json({title : 'User found'});
+            return res.status(200).json({title : 'User found', user : obj});
           }
       });
     });
+
+    
 
 
   // all other routes are handled by Angular

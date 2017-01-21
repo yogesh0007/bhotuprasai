@@ -13,12 +13,14 @@ export class LoginComponent {
   constructor(private _http: Http, private dataService: DataService, private router : Router){}
 
   onLogin(myForm: any){
-    console.log(myForm);
+    //console.log(myForm);
     this.dataService.onLogin(myForm).subscribe(res => {
       var found = res.json();
       if(found.title == 'User found'){
-        localStorage.setItem('user', 'loggedIn')
+        localStorage.setItem('user', 'loggedIn');
+        localStorage.setItem('userTotal', found);
         this.router.navigateByUrl('/');
+        console.log(found);
       }
       if(found.title.indexOf('not') > -1){
         alert("Username/Password invalid");

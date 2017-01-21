@@ -1,0 +1,51 @@
+<div class="card">
+            <div class="card-block">
+                <h4 class="card-title">Donations made by Members</h4>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <table class="table">
+      <thead class="thead-default">
+        <tr>
+          <th>FirstName</th>
+          <th>LastName</th>
+          <th>Donated Amount</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td colspan="4">There are no donations recorded.</td>
+        </tr>
+      </tbody>
+      <tbody>
+        <tr>
+          <td>First Name</td>
+          <td>Last Name</td>
+          <td>Donated Amount</td>
+          <td>
+            <button class="btn btn-sm btn-warning" (click)="enableEditing(user)"><i class="fa fa-pencil"></i> Edit</button>
+            <button class="btn btn-sm btn-danger" (click)="deleteUser(user)"><i class="fa fa-trash"></i> Delete</button>
+          </td>
+        </tr>
+        <tr>
+            <td style="text-align: center" colspan="3"><button class="btn btn-sm btn-success">Add Donators</button></td>
+        </tr>
+      </tbody>
+      <tbody>
+       <form #f="ngForm" (ngSubmit) = "onAddingDonator(f.value)">
+        <tr>
+          <td>First Name</td>
+          <td>Last Name</td>
+          <td>Donated Amount</td>
+        </tr>
+        <tr>
+          <td><input class="form-control" type="text" [(ngModel)]= "firstName" name="firstName"></td>
+          <td><input class="form-control" type="text" [(ngModel)]= "lastName" name="lastName"></td>
+          <td><input class="form-control" type="text" [(ngModel)]= "donations" name="donations"></td>
+        </tr>
+        <tr>
+            <td style="text-align: center" colspan="2"><button class="btn btn-sm btn-success">Save</button></td>
+        </tr>
+        </form>
+      </tbody>
+    </table>
+            </div>
+        </div>

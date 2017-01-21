@@ -2,17 +2,23 @@
 
   <nav class="navbar navbar-dark bg-primary">
     <div class="nav navbar-nav">
-      <a [routerLink]="['/csscarousel']" class="nav-item nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+      <a [routerLink]="['/']" class="nav-item nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
         <i class="fa fa-home"></i>Welcome
       </a>
-      <a [routerLink]="['/']" class="nav-item nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
-        <i class="fa fa-home"></i> Home
+      <a [routerLink]="['/users']" class="nav-item nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" *ngIf="isloggedIn()">
+        <i class="fa fa-user-o"></i> Users
       </a>
       <a style="float: right" [routerLink]="['/signup']" class="nav-item nav-link" routerLinkActive="active" *ngIf="!isloggedIn()">
         <i class="fa fa-registered"></i> Signup
       </a>
       <a style="float: right" [routerLink]="['/login']" class="nav-item nav-link" routerLinkActive="active" *ngIf="!isloggedIn()">
         <i class="fa fa-user"></i> Login
+      </a>
+      <a [routerLink]= "['/notes']" class="nav-item nav-link" routerLinkActive="active" *ngIf="isloggedIn()">
+        <i class="fa fa-tablet"></i>Notes
+      </a>
+      <a [routerLink]= "['/donations']" class="nav-item nav-link" routerLinkActive="active" *ngIf="isloggedIn()">
+        <i class="fa fa-money"></i>Donations
       </a>
       <a [routerLink]="['/about']" class="nav-item nav-link" routerLinkActive="active">
         <i class="fa fa-info-circle"></i> About
