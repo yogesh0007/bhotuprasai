@@ -39,4 +39,8 @@ export class DataService {
     return this.http.post("/saveNotes", JSON.stringify(user), this.options);
   }
 
+  onDonationSave(donatedUser){
+    return this.http.post("/saveDonations", JSON.stringify(donatedUser), this.options);
+  }
+
 }

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Http } 						from '@angular/http';
+import { Http } from '@angular/http';
 import {DataService}  from '../services/data.service';
 import { Router, RouterModule }  from '@angular/router';
 

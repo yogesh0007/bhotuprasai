@@ -21,6 +21,7 @@ mongoose.Promise = global.Promise;
 
 // Models
 var User = require('./user.model.js');
+var UserDonations = require('./userdonations.model');
 
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function() {
@@ -98,7 +99,16 @@ db.once('open', function() {
       });
     });
 
-    
+    //For Donations
+    // create
+    app.post('/saveDonations', function(req, res) {
+      var obj = new UserDonations(req.body);
+      console.log("obj " +obj); 
+      obj.save(function(err, obj) {
+        if(err) return console.error(err);
+        res.status(200).json(obj);
+      });
+    });
 
 
   // all other routes are handled by Angular
